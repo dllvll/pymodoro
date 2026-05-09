@@ -2,7 +2,12 @@ import sys
 import argparse
 
 
-def main() -> None:
+def parse_args() -> argparse.Namespace:
+    """ Parses command-line arguments.
+    
+    Returns:
+        argparse.Namespace: An object containing the parsed command-line arguments.
+    """
     parser = argparse.ArgumentParser(
         description="A simple, minimalistic terminal-based Pomodoro timer.")
     parser.add_argument(
@@ -11,7 +16,11 @@ def main() -> None:
         "short_break", type=int, help="Duration of short break sessions in minutes.")
     parser.add_argument(
         "long_break", type=int, help="Duration of long break sessions in minutes.")
-    args = parser.parse_args()
+    return parser.parse_args()
+
+
+def main() -> None:
+    args = parse_args()
 
 
 if __name__ == "__main__":
