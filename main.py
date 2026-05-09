@@ -1,8 +1,17 @@
 import sys
+import argparse
 
 
 def main() -> None:
-    print()
+    parser = argparse.ArgumentParser(
+        description="A simple, minimalistic terminal-based Pomodoro timer.")
+    parser.add_argument(
+        "pomodoro", type=int, help="Duration of work sessions in minutes.")
+    parser.add_argument(
+        "short_break", type=int, help="Duration of short break sessions in minutes.")
+    parser.add_argument(
+        "long_break", type=int, help="Duration of long break sessions in minutes.")
+    args = parser.parse_args()
 
 
 if __name__ == "__main__":
