@@ -21,11 +21,11 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="A simple, minimalistic terminal-based Pomodoro timer.")
     parser.add_argument(
-        "pomodoro", type=int, help="Duration of work sessions in minutes.")
+        "pomodoro", type=positive_int, help="Duration of work sessions in minutes.")
     parser.add_argument(
-        "short_break", type=int, help="Duration of short break sessions in minutes.")
+        "short_break", type=positive_int, help="Duration of short break sessions in minutes.")
     parser.add_argument(
-        "long_break", type=int, help="Duration of long break sessions in minutes.")
+        "long_break", type=positive_int, help="Duration of long break sessions in minutes.")
     return parser.parse_args()
 
 
