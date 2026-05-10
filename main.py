@@ -6,10 +6,10 @@ def positive_int(value: str) -> int:
     try:
         int_value = int(value)
         if int_value <= 0:
-            raise argparse.ArgumentTypeError("Value must be a positive integer.")
+            raise argparse.ArgumentTypeError(f"{value} must be a positive integer.")
         return int_value
     except ValueError:
-        raise argparse.ArgumentTypeError("Value must be an integer.")
+        raise argparse.ArgumentTypeError(f"{value} must be an integer.")
 
 
 def parse_args() -> argparse.Namespace:
