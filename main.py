@@ -3,6 +3,14 @@ import argparse
 
 
 def positive_int(value: str) -> int:
+    """ Validates that the provided value is a positive integer.
+
+    Args:
+        value (str): The value to validate.
+
+    Returns:
+        int: The validated positive integer.
+    """
     try:
         int_value = int(value)
         if int_value <= 0:
