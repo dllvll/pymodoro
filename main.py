@@ -1,5 +1,11 @@
 import sys
 import argparse
+import subprocess
+
+
+def send_notification(title: str, message: str, expire_time: int) -> None:
+    subprocess.run(
+        ["notify-send", f"--expire-time={expire_time * 1000}", "--app-name=pymodoro", f"{title}", f"{message}"])
 
 
 def positive_int(value: str) -> int:
@@ -14,7 +20,8 @@ def positive_int(value: str) -> int:
     try:
         int_value = int(value)
         if int_value <= 0:
-            raise argparse.ArgumentTypeError(f"{value} must be a positive integer.")
+            raise argparse.ArgumentTypeError(
+                f"{value} must be a positive integer.")
         return int_value
     except ValueError:
         raise argparse.ArgumentTypeError(f"{value} must be an integer.")
@@ -22,7 +29,7 @@ def positive_int(value: str) -> int:
 
 def parse_args() -> argparse.Namespace:
     """ Parses command-line arguments.
-    
+
     Returns:
         argparse.Namespace: An object containing the parsed command-line arguments.
     """
