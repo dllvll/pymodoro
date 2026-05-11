@@ -34,6 +34,9 @@ def parse_args() -> argparse.Namespace:
         "short_break", type=positive_int, help="Duration of short break sessions in minutes.")
     parser.add_argument(
         "long_break", type=positive_int, help="Duration of long break sessions in minutes.")
+    parser.add_argument(
+        "-t", "--expire-time", type=positive_int, default=5,
+        help="Duration of the notifications expire time in seconds.")
     return parser.parse_args()
 
 
