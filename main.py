@@ -4,6 +4,15 @@ import subprocess
 
 
 def send_notification(title: str, message: str, expire_time: int) -> None:
+    """ Sends a desktop notification using the notify-send command.
+
+    Args:
+        title (str): The title of the notification.
+        message (str): The message body of the notification.
+        expire_time (int): The duration in seconds for which the notification should be displayed.
+    """
+    # The os.system() function in Python is deprecated due to
+    # security risks, such as susceptibility to shell injection.
     subprocess.run(
         ["notify-send", f"--expire-time={expire_time * 1000}", "--app-name=pymodoro", f"{title}", f"{message}"])
 
