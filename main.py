@@ -58,6 +58,10 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> None:
     args = parse_args()
+    pomodoro_duration    = args.pomodoro    * 60
+    short_break_duration = args.short_break * 60
+    long_break_duration  = args.long_break  * 60
+    expire_time          = args.expire_time
 
 
 if __name__ == "__main__":
