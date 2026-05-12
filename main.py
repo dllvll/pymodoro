@@ -64,6 +64,7 @@ def main() -> None:
     long_break_duration = args.long_break * 60
     expire_time = args.expire_time
     pomodoro_start = datetime.now()
+    pomodoro_end = pomodoro_start + timedelta(seconds=pomodoro_duration)
 
 
 if __name__ == "__main__":
