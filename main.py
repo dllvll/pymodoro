@@ -8,6 +8,10 @@ def notify_pomodoro_start(pomodoro_duration: int, expire_time: int) -> None:
     send_notification("Pomodoro Started", f"Time to focus! See you in {pomodoro_duration} minutes.", expire_time)
 
 
+def notify_short_break_start(short_break_duration: int, expire_time: int) -> None:
+    send_notification("Short Break Started", f"Nice work! Take {short_break_duration} minutes to recharge.", expire_time)
+
+
 def send_notification(title: str, message: str, expire_time: int) -> None:
     """ Sends a desktop notification using the notify-send command.
 
