@@ -5,6 +5,12 @@ from datetime import datetime, timedelta
 
 
 def notify_pomodoro_start(pomodoro_duration: int, expire_time: int) -> None:
+    """ Sends a notification indicating the start of a Pomodoro session.
+    
+    Args:
+        pomodoro_duration (int): The duration of the Pomodoro session in minutes.
+        expire_time (int): The duration in seconds for which the notification should be displayed.
+    """
     send_notification("Pomodoro Started", f"Time to focus! See you in {pomodoro_duration} minutes.", expire_time)
 
 
