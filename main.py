@@ -4,6 +4,10 @@ import subprocess
 from datetime import datetime, timedelta
 
 
+def notify_pomodoro_start(expire_time: int) -> None:
+    send_notification("Pomodoro Started", f"Time to focus! See you in {expire_time} minutes.", expire_time)
+
+
 def send_notification(title: str, message: str, expire_time: int) -> None:
     """ Sends a desktop notification using the notify-send command.
 
