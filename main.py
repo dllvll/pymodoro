@@ -25,6 +25,12 @@ def notify_short_break_start(short_break_duration: int, expire_time: int) -> Non
 
 
 def notify_long_break_start(long_break_duration: int, expire_time: int) -> None:
+    """ Sends a notification indicating the start of a long break session.
+    
+    Args:
+        long_break_duration (int): The duration of the long break session in minutes.
+        expire_time (int): The duration in seconds for which the notification should be displayed.
+    """
     send_notification("Long Break Started", f"All done! Enjoy your {long_break_duration} minutes.", expire_time)
 
 
