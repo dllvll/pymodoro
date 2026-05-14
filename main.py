@@ -15,6 +15,12 @@ def notify_pomodoro_start(pomodoro_duration: int, expire_time: int) -> None:
 
 
 def notify_short_break_start(short_break_duration: int, expire_time: int) -> None:
+    """ Sends a notification indicating the start of a short break session.
+    
+    Args:
+        short_break_duration (int): The duration of the short break session in minutes.
+        expire_time (int): The duration in seconds for which the notification should be displayed.
+    """
     send_notification("Short Break Started", f"Nice work! Take {short_break_duration} minutes to recharge.", expire_time)
 
 
