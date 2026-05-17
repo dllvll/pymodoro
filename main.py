@@ -1,37 +1,38 @@
-import sys
-import argparse
-import subprocess
+import sys, argparse, subprocess, threading, time
 from datetime import datetime, timedelta
 
 
 def notify_pomodoro_start(pomodoro_duration: int, expire_time: int) -> None:
     """ Sends a notification indicating the start of a Pomodoro session.
-    
+
     Args:
         pomodoro_duration (int): The duration of the Pomodoro session in minutes.
         expire_time (int): The duration in seconds for which the notification should be displayed.
     """
-    send_notification("Pomodoro Started", f"Time to focus! See you in {pomodoro_duration} minutes.", expire_time)
+    send_notification(
+        "Pomodoro Started", f"Time to focus! See you in {pomodoro_duration} minutes.", expire_time)
 
 
 def notify_short_break_start(short_break_duration: int, expire_time: int) -> None:
     """ Sends a notification indicating the start of a short break session.
-    
+
     Args:
         short_break_duration (int): The duration of the short break session in minutes.
         expire_time (int): The duration in seconds for which the notification should be displayed.
     """
-    send_notification("Short Break Started", f"Nice work! Take {short_break_duration} minutes to recharge.", expire_time)
+    send_notification("Short Break Started",
+                      f"Nice work! Take {short_break_duration} minutes to recharge.", expire_time)
 
 
 def notify_long_break_start(long_break_duration: int, expire_time: int) -> None:
     """ Sends a notification indicating the start of a long break session.
-    
+
     Args:
         long_break_duration (int): The duration of the long break session in minutes.
         expire_time (int): The duration in seconds for which the notification should be displayed.
     """
-    send_notification("Long Break Started", f"All done! Enjoy your {long_break_duration} minutes.", expire_time)
+    send_notification("Long Break Started",
+                      f"All done! Enjoy your {long_break_duration} minutes.", expire_time)
 
 
 def send_notification(title: str, message: str, expire_time: int) -> None:
@@ -95,7 +96,6 @@ def main() -> None:
     expire_time = args.expire_time
     current_time = datetime.now()
     pomodoro_end = current_time + timedelta(minutes=pomodoro_duration)
-
 
 
 if __name__ == "__main__":
