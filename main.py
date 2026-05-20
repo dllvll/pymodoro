@@ -3,6 +3,11 @@ from datetime import datetime, timedelta
 
 
 def run_timer(duration: int) -> None:
+    """ Runs a timer for the specified duration in minutes, updating the remaining time every second.
+    
+    Args:
+        duration (int): The duration of the timer in minutes.
+    """
     timer_end = datetime.now() + timedelta(minutes=duration)
     while (datetime.now() < timer_end):
         time.sleep(1)
