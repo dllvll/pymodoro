@@ -102,8 +102,6 @@ def main() -> None:
     short_break_duration = args.short_break
     long_break_duration = args.long_break
     expire_time = args.expire_time
-    current_time = datetime.now()
-    pomodoro_end = current_time + timedelta(minutes=pomodoro_duration)
 
 
 if __name__ == "__main__":
