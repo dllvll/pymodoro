@@ -2,6 +2,14 @@ import sys, argparse, subprocess, threading, time
 from datetime import datetime, timedelta
 
 
+def run_timer(duration: int) -> None:
+    timer_end = datetime.now() + timedelta(minutes=duration)
+    while (datetime.now() < timer_end):
+        time.sleep(1)
+        subprocess.run(["clear"])
+        print(timer_end - datetime.now())
+
+
 def notify_pomodoro_start(pomodoro_duration: int, expire_time: int) -> None:
     """ Sends a notification indicating the start of a Pomodoro session.
 
